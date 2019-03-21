@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Book } from 'src/app/shared/models/book';
 
@@ -9,7 +9,7 @@ import { Book } from 'src/app/shared/models/book';
 })
 export class BookDetailsComponent implements OnInit {
 
-  book: Book = new Book(1, 'Il était une fois', 3.87, 16);
+  @Input('book') book: Book;
 
   constructor() { }
 

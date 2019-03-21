@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Book } from '../../models/book';
+
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksComponent implements OnInit {
 
+  books: Book[] = [
+    new Book(1, 'Il était une fois', 3.87, 16),
+    new Book(2, 'Raconte-moi', 53),
+    new Book(3, 'Biographie étrange', 28, 6),
+  ];
+  book: Book;
+
   constructor() { }
 
   ngOnInit() {
+    this.book = this.books[0];
   }
 
 }
