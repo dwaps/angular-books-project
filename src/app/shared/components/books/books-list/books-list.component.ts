@@ -10,15 +10,17 @@ import { Book } from 'src/app/shared/models/book';
 export class BooksListComponent implements OnInit {
 
   @Input() books: Book[];
-  @Output('pick') pickEvent: EventEmitter<number> = new EventEmitter<number>(); 
+  @Output('pick') pickEvent: EventEmitter<number> = new EventEmitter<number>();
+
+  activeBook: number;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.books);
   }
 
   pickItem(index: number) {
+    this.activeBook = index;
     this.pickEvent.emit(index);
   }
 

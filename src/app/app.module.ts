@@ -9,6 +9,9 @@ import { BooksComponent } from './shared/components/books/books.component';
 import { BooksListComponent } from './shared/components/books/books-list/books-list.component';
 import { BookDetailsComponent } from './shared/components/books/book-details/book-details.component';
 
+// Directives
+import { ActiveDirective } from './shared/directives/active.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +19,8 @@ import { BookDetailsComponent } from './shared/components/books/book-details/boo
     BookDetailsComponent,
     BooksComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ActiveDirective
   ],
   imports: [
     BrowserModule

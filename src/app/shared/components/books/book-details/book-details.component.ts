@@ -14,6 +14,7 @@ export class BookDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('this.book ==>', this.book);
   }
 
   public addIntoCart(): void {

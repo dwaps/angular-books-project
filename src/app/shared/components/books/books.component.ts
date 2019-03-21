@@ -19,8 +19,6 @@ export class BooksComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.book = this.books[0];
-    this.books[2].image = 'http://lorempixel.com/800/800';
   }
 
   selectBook(index: number) {
