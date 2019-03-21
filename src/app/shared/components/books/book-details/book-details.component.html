@@ -1,3 +1,29 @@
-<p>
-  book-details works!
-</p>
+<div class="card">
+  <h5 class="card-header card-header-info text-center">
+    {{ book.title | uppercase }}
+  </h5>
+
+  <div class="card-body text-center">
+    <h5 class="card-title">Description</h5>
+    <p class="card-text text-justify mx-4">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique provident optio voluptas. Voluptatibus omnis odio harum laudantium cumque fugit exercitationem.
+    </p>
+    <img class="card-img-top" src="http://lorempixel.com/640/480/abstract" alt="">
+    <hr>
+    <div class="d-flex justify-content-between">
+      <div>
+        <strong>Prix du livre :</strong> {{ book.price }} €
+      </div>
+      <div class="btn-group">
+        <button
+          class="btn btn-outline-info btn-sm"
+          [disabled]="!book.available">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer text-center">
+    Il reste actuellement {{ book.copies }} exemplaires en stock.
+  </div>
+
+</div>
