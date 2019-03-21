@@ -3,21 +3,26 @@
 
 <h1 class="text-center mb-5">Liste des livres</h1>
 
-<div class="list-group list-group-flush">
-  <a
-    class="d-flex justify-content-between list-group-item list-group-item-action"
-    [ngClass]="{ disabled: !book.available }"
-    [appActive]="i === activeBook"
-    (click)="pickItem(i)"
-    disabled
-    *ngFor="let book of books; let i = index">
-      <span>{{ book.title | uppercase }}</span>
-      <div>
-        <span
-          class="badge"
-          [ngClass]="{'badge-success': book.copies, 'badge-danger': !book.copies}">
-            {{ book.copies }}
-        </span>
-      </div>
-  </a>
+<div *ngIf="books.length">
+  <div class="list-group list-group-flush">
+    <a
+      class="d-flex justify-content-between list-group-item list-group-item-action"
+      [ngClass]="{ disabled: !book.available }"
+      [appActive]="i === activeBook"
+      (click)="pickItem(i)"
+      disabled
+      *ngFor="let book of books; let i = index">
+        <span>{{ book.title | uppercase }}</span>
+        <div>
+          <span
+            class="badge"
+            [ngClass]="{'badge-success': book.copies, 'badge-danger': !book.copies}">
+              {{ book.copies }}
+          </span>
+        </div>
+    </a>
+  </div>
+</div>
+<div *ngIf="!books.length">
+  <h5 class="alert alert-danger text-center">Il n'y a aucun livre !</h5>
 </div>

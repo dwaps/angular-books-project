@@ -1,24 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 
+// Models
 import { Book } from '../../models/book';
+
+// Services
+import { BookService } from '../../services/book.service';
 
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
-  styleUrls: ['./books.component.css']
+  styleUrls: ['./books.component.css'],
+  providers: [BookService]
 })
 export class BooksComponent implements OnInit {
 
-  books: Book[] = [
-    new Book(1, 'Il était une fois', 3.87, 16),
-    new Book(2, 'Raconte-moi', 53),
-    new Book(3, 'Biographie étrange', 28, 6),
-  ];
+  books: Book[] = [];
   book: Book;
 
-  constructor() { }
+  constructor(
+    private bookService: BookService,
+  ) { }
 
   ngOnInit() {
+    this.books = this.bookService.books;
   }
 
   selectBook(index: number) {
