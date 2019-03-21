@@ -7,6 +7,7 @@
   <a
     class="d-flex justify-content-between list-group-item list-group-item-action list-group-item-info"
     [ngClass]="{ active: book.selected, disabled: !book.available }"
+    (click)="pickItem(i)"
     disabled
     *ngFor="let book of books; let i = index">
       <span>{{ book.title | uppercase }}</span>

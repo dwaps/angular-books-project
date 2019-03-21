@@ -9,11 +9,15 @@ import { Book } from 'src/app/shared/models/book';
 })
 export class BookDetailsComponent implements OnInit {
 
-  @Input('book') book: Book;
+  @Input() book: Book;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public addIntoCart(): void {
+    console.log('adding to shopping cart...');
   }
 
 }

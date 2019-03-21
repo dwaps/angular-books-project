@@ -21,6 +21,7 @@
       </div>
       <div class="btn-group">
         <button
+          (click)="addIntoCart()"
           class="btn btn-outline-info btn-sm"
           [disabled]="!book.available">Ajouter au panier</button>
       </div>
