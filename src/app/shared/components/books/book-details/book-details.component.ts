@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Book } from 'src/app/shared/models/book';
+
 @Component({
   selector: 'app-book-details',
   templateUrl: './book-details.component.html',
@@ -7,14 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookDetailsComponent implements OnInit {
 
-  book: any = {
-    id: 1,
-    title: 'Il était une fois',
-    price: 3.87,
-    copies: 16,
-    selected: true,
-    available: true
-  };
+  book: Book = new Book(1, 'Il était une fois', 3.87, 16);
 
   constructor() { }
 

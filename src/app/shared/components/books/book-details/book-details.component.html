@@ -4,16 +4,16 @@
 <h1 class="text-center mb-5">Détail d'un livre</h1>
 
 <div class="card">
-  <h5 class="card-header card-header-info text-center">
+  <h5 class="card-header card-header-info text-center" [ngClass]="{'text-primary': book.available}">
     {{ book.title | uppercase }}
   </h5>
 
   <div class="card-body text-center">
     <h5 class="card-title">Description</h5>
     <p class="card-text text-justify mx-4">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique provident optio voluptas. Voluptatibus omnis odio harum laudantium cumque fugit exercitationem.
+      {{ book.description }}
     </p>
-    <img class="card-img-top" src="http://lorempixel.com/640/480/abstract" alt="">
+    <img class="card-img-top" [src]="book.image" alt="Couverture du livre">
     <hr>
     <div class="d-flex justify-content-between">
       <div>
