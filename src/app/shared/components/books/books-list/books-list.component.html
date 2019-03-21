@@ -9,7 +9,7 @@
     [ngClass]="{ active: book.selected, disabled: !book.available }"
     disabled
     *ngFor="let book of books; let i = index">
-      {{ book.title | uppercase }}
+      <span>{{ book.title | uppercase }}</span>
       <div>
         <span
           class="badge"

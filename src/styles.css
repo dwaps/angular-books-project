@@ -1,5 +1,17 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-.list-group a, .btn:not[disabled] {
+.btn:not[disabled] {
   cursor: pointer;
+}
+
+.list-group a {
+  cursor: pointer;
+}
+
+.list-group a.disabled > span {
+  opacity: 0.6;
+}
+
+.btn[disabled]:hover {
+  cursor: not-allowed;
 }
