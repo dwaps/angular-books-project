@@ -1,3 +1,19 @@
-<p>
-  books-list works!
-</p>
+<!-- https://getbootstrap.com/docs/4.3/components/list-group/ -->
+<!-- https://angular.io/api?type=pipe -->
+
+<div class="list-group list-group-flush">
+  <a
+    class="d-flex justify-content-between list-group-item list-group-item-action list-group-item-info"
+    [ngClass]="{ active: book.selected, disabled: !book.available }"
+    disabled
+    *ngFor="let book of books; let i = index">
+      {{ book.title | uppercase }}
+      <div>
+        <span
+          class="badge"
+          [ngClass]="{'badge-success': book.copies, 'badge-danger': !book.copies}">
+            {{ book.copies }}
+        </span>
+      </div>
+  </a>
+</div>
