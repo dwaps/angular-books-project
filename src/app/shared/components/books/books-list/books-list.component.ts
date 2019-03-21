@@ -1,27 +1,40 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 
+// Models
 import { Book } from 'src/app/shared/models/book';
+
+// Services
+import { BookService } from 'src/app/shared/services/book.service';
 
 @Component({
   selector: 'app-books-list',
   templateUrl: './books-list.component.html',
   styleUrls: ['./books-list.component.css']
 })
-export class BooksListComponent implements OnInit {
+export class BooksListComponent implements OnInit, OnDestroy {
 
-  @Input() books: Book[];
-  @Output('pick') pickEvent: EventEmitter<number> = new EventEmitter<number>();
-
+  books: Book[];
   activeBook: number;
+  subscription: Subscription;
 
-  constructor() { }
+  constructor(
+    private bookService: BookService
+  ) { }
 
   ngOnInit() {
+    this.subscription = this.bookService.books.subscribe((books: Book[]) => {
+      this.books = books;
+    })
   }
 
   pickItem(index: number) {
     this.activeBook = index;
-    this.pickEvent.emit(index);
+    this.bookService.selectBook(index);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }
