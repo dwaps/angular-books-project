@@ -1,5 +1,9 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+body {
+  min-width: 370px;
+}
+
 .btn:not[disabled] {
   cursor: pointer;
 }
