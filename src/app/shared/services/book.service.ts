@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { Book } from '../models/book';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class BookService {
 
   public books: BehaviorSubject<Book[]> = new BehaviorSubject([

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-books-admin-page',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksAdminPageComponent implements OnInit {
 
-  constructor() { }
+  currentRoute: string;
+
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit() {
+    this.currentRoute = this.router.url;
   }
 
 }

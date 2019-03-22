@@ -9,6 +9,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { BooksComponent } from './shared/components/books/books.component';
 import { BooksListComponent } from './shared/components/books/books-list/books-list.component';
 import { BookDetailsComponent } from './shared/components/books/book-details/book-details.component';
+import { BookEditComponent } from './shared/components/books/book-edit/book-edit.component';
+import { BookAddComponent } from './shared/components/books/book-add/book-add.component';
 
 // Directives
 import { ActiveDirective } from './shared/directives/active.directive';
@@ -27,6 +29,8 @@ import { APP_ROUTES } from './app.routing';
     BooksListComponent,
     BookDetailsComponent,
     BooksComponent,
+    BookEditComponent,
+    BookAddComponent,
     HeaderComponent,
     FooterComponent,
 

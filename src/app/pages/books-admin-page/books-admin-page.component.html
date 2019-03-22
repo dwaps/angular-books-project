@@ -1,3 +1,15 @@
-<p>
-  books-admin-page works!
-</p>
+<h2 class="text-center">Interface d'administration</h2>
+
+<div class="row">
+  <div class="col-lg-4">
+    <app-books-list></app-books-list>
+    <hr class="d-lg-none my-5">
+  </div>
+  <div class="col-lg-8">
+    <div *ngIf="currentRoute === '/admin/books'">
+      <app-book-details></app-book-details>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
