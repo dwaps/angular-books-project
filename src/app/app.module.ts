@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 // Components
 import { AppComponent } from './app.component';
@@ -12,18 +13,35 @@ import { BookDetailsComponent } from './shared/components/books/book-details/boo
 // Directives
 import { ActiveDirective } from './shared/directives/active.directive';
 
+// Pages
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { BooksShopPageComponent } from './pages/books-shop-page/books-shop-page.component';
+import { BooksAdminPageComponent } from './pages/books-admin-page/books-admin-page.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { APP_ROUTES } from './app.routing';
+
 @NgModule({
   declarations: [
+    // Components
     AppComponent,
     BooksListComponent,
     BookDetailsComponent,
     BooksComponent,
     HeaderComponent,
     FooterComponent,
-    ActiveDirective
+
+    // Pages
+    HomePageComponent,
+    BooksShopPageComponent,
+    BooksAdminPageComponent,
+    ContactPageComponent,
+
+    // Directives
+    ActiveDirective,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(APP_ROUTES),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 <!-- https://getbootstrap.com/docs/4.3/components/navbar/ -->
 
 <header>
-  <nav class="navbar navbar-dark bg-dark mb-4">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
     <a href="/" class="navbar-brand">
       <img
         src="/assets/dwaps.gif"
@@ -9,5 +9,16 @@
         class="d-inline-block align-top">
       DWAPS
     </a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a routerLink="" class="nav-link active">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="books" class="nav-link">Boutique</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="contact" class="nav-link">Contact</a>
+        </li>
+      </ul>
   </nav>
 </header>
